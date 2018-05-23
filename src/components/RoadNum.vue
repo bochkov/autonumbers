@@ -160,7 +160,7 @@ export default {
   text-align: center;
   font-family: "RoadFont";
   font-size: 90pt;
-  width: inherit;
+  width: 190px;
 }
 
 .rus {
