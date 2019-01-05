@@ -4,7 +4,7 @@
         <input type="number" maxlength="3" v-model="inCode"/>
         <div class="rus">
           RUS
-          <img class="flag" src="../assets/russia-flag-icon-32.png"/>
+          <img class="flag" :src="rusFlag"/>
         </div>
       </div>
       <div class="result" v-if="selected && selected.length">
@@ -37,6 +37,7 @@ export default {
   },
   data: function() {
     return {
+      rusFlag: require("@/assets/russia-flag-icon-32.png"),
       inCode: "",
       codes: [
         { region: "Республика Адыгея", code: ["01", "101"] },
