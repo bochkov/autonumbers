@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="reg">
-        <input type="number" maxlength="3" v-model="inCode"/>
+        <input class="reg_input" type="number" maxlength="3" v-model="inCode"/>
         <div class="rus">
           RUS
           <img class="flag" src="@/assets/russia-flag-icon-32.png"/>
@@ -153,14 +153,16 @@ export default {
   border-bottom-right-radius: 20px;
 }
 
-.reg > input {
-  border: 0;
+.reg_input {
   cursor: pointer;
-  height: 100px;
+  height: 100px !important;
   text-align: center;
   font-family: "RoadFont";
   font-size: 90pt;
-  width: 190px;
+  width: 190px !important;
+  padding: 0;
+  border: none;
+  outline: none;
 }
 
 .rus {
