@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="reg">
-        <input class="reg_input" type="number" maxlength="3" v-model="inCode"/>
+        <input class="reg_input" v-model="inCode" type="text" maxlength="3" inputmode="numeric" />
         <div class="rus">
           RUS
           <img class="flag" src="@/assets/russia-flag-icon-32.png"/>
@@ -26,7 +26,7 @@ export default {
   name: "RoadNum",
   computed: {
     selected() {
-      if (this.inCode && this.inCode.length > 0) {
+      if (this.inCode) {
         return this.codes.filter(item => {
           return item.code.some((el) => {
             return el.indexOf(this.inCode) >= 0;
@@ -35,7 +35,7 @@ export default {
       } else return [];
     }
   },
-  data: function() {
+  data() {
     return {
       inCode: "",
       codes: [
@@ -62,9 +62,9 @@ export default {
         { region: "Чувашская Республика", code: ["21", "121"] },
         { region: "Алтайский край", code: ["22", "122"] },
         { region: "Краснодарский край", code: ["23", "93", "123", "193"] },
-        { region: "Красноярский край", code: ["24", "84", "88", "124"] },
+        { region: "Красноярский край", code: ["24", "124"] },
         { region: "Приморский край", code: ["25", "125"] },
-        { region: "Ставропольский край", code: ["26"] },
+        { region: "Ставропольский край", code: ["26", "126"] },
         { region: "Хабаровский край", code: ["27"] },
         { region: "Амурская область", code: ["28"] },
         { region: "Архангельская область", code: ["29"] },
@@ -76,7 +76,7 @@ export default {
         { region: "Вологодская область", code: ["35"] },
         { region: "Воронежская область", code: ["36", "136"] },
         { region: "Ивановская область", code: ["37"] },
-        { region: "Иркутская область", code: ["38", "85", "138"] },
+        { region: "Иркутская область", code: ["38", "138"] },
         { region: "Калининградская область", code: ["39", "91"] },
         { region: "Калужская область", code: ["40"] },
         { region: "Камчатский край", code: ["41"] },
@@ -90,21 +90,21 @@ export default {
         { region: "Магаданская область", code: ["49"] },
         {
           region: "Московская область",
-          code: ["50", "90", "150", "190", "750", "790"]
+          code: ["50", "90", "150", "250", "190", "550", "750", "790"]
         },
         { region: "Мурманская область", code: ["51"] },
-        { region: "Нижегородская область", code: ["52", "152"] },
+        { region: "Нижегородская область", code: ["52", "152", "252"] },
         { region: "Новгородская область", code: ["53"] },
         { region: "Новосибирская область", code: ["54", "154"] },
         { region: "Омская область", code: ["55"] },
         { region: "Оренбургская область", code: ["56", "156"] },
         { region: "Орловская область", code: ["57"] },
         { region: "Пензенская область", code: ["58"] },
-        { region: "Пермский край", code: ["59", "81", "159"] },
+        { region: "Пермский край", code: ["59", "159"] },
         { region: "Псковская область", code: ["60"] },
         { region: "Ростовская область", code: ["61", "161", "761"] },
         { region: "Рязанская область", code: ["62"] },
-        { region: "Самарская область", code: ["63", "163"] },
+        { region: "Самарская область", code: ["63", "163", "763"] },
         { region: "Саратовская область", code: ["64", "164"] },
         { region: "Сахалинская область", code: ["65"] },
         { region: "Свердловская область", code: ["66", "96", "196"] },
@@ -116,21 +116,26 @@ export default {
         { region: "Тюменская область", code: ["72", "172"] },
         { region: "Ульяновская область", code: ["73", "173"] },
         { region: "Челябинская область", code: ["74", "174", "774"] },
-        { region: "Забайкальский край", code: ["75", "80"] },
+        { region: "Забайкальский край", code: ["75"] },
         { region: "Ярославская область", code: ["76"] },
         {
           region: "Москва",
-          code: ["77", "97", "99", "177", "197", "199", "777", "797"]
+          code: ["77", "97", "99", "177", "197", "199", "777", "797", "799"]
         },
         { region: "Санкт-Петербург", code: ["78", "98", "178", "198"] },
         { region: "Еврейская автономная область", code: ["79"] },
+        { region: "Донецкая народная республика", code: ["80"] },
+        { region: "Луганская народная республика", code: ["81"] },
         { region: "Республика Крым", code: ["82"] },
         { region: "Ненецкий АО", code: ["83"] },
+        { region: "Херсонская область", code: ["84", "184"] },
+        { region: "Запорожская область", code: ["85"] },
         { region: "Ханты-Мансийский АО", code: ["86", "186"] },
         { region: "Чукотский АО", code: ["87"] },
         { region: "Ямало-Ненецкий АО", code: ["89"] },
         { region: "Севастополь", code: ["92"] },
-        { region: "Байконур", code: ["94"] }
+        { region: "Байконур", code: ["94"] },
+        { region: "Харьковская область", code: ["188"] },
       ]
     };
   }
@@ -141,7 +146,7 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Marmelad");
 @font-face {
   font-family: RoadFont;
-  src: url("../assets/RoadNumbers.otf");
+  src: url("@/assets/RoadNumbers.otf");
 }
 
 .reg {

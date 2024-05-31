@@ -1,19 +1,10 @@
-<template>
-  <div id="app">
-    <RoadNum />
-  </div>
-</template>
-
-<script>
-import RoadNum from './components/RoadNum.vue'
-
-export default {
-  name: 'app',
-  components: {
-    RoadNum
-  }
-}
+<script setup>
+import RoadNum from './components/RoadNum.vue';
 </script>
+
+<template>
+  <RoadNum />
+</template>
 
 <style>
 #app {
