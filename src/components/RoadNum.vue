@@ -4,7 +4,7 @@
         <input class="reg_input" v-model="inCode" type="text" maxlength="3" inputmode="numeric" />
         <div class="rus">
           RUS
-          <img class="flag" src="@/assets/russia-flag-icon-32.png"/>
+          <img class="flag" alt="" src="@/assets/russia-flag-icon-32.png"/>
         </div>
       </div>
       <div class="result" v-if="selected && selected.length">
@@ -162,7 +162,7 @@ export default {
   cursor: pointer;
   height: 100px !important;
   text-align: center;
-  font-family: "RoadFont";
+  font-family: "RoadFont", sans-serif;
   font-size: 90pt;
   width: 190px !important;
   padding: 0;
