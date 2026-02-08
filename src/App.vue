@@ -1,14 +1,14 @@
 <script setup>
-import RoadNum from './components/RoadNum.vue';
+import RoadNum from "./components/RoadNum.vue";
 </script>
 
 <template>
-  <RoadNum />
+    <RoadNum />
 </template>
 
 <style>
 #app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 </style>
